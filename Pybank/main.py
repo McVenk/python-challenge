@@ -17,11 +17,14 @@ with open(path,'r') as file:
         dates.append(row[0])
         Profit_Losses.append(row[1])
 
-    # Removing the headers for dates and profit_losses columns
-    dates.pop(0)
-    Profit_Losses.pop(0)
+    # Condition for removing headers (if any) for further calculations
+    if dates[0] == "Date":
+        dates.pop(0)
+    if Profit_Losses[0] == "Profit/Losses":
+        Profit_Losses.pop(0)
     
-    
+   
+        
     # Computing and printing total months 
     total_months= len(dates)
     
